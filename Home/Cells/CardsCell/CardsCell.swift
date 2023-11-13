@@ -36,7 +36,7 @@ extension CardsCell {
         collectionViewLayout.itemSize = CGSize(width: 100, height: 30)
         collectionViewLayout.scrollDirection = .horizontal
         collectionView = UICollectionView(frame: .zero,collectionViewLayout: collectionViewLayout)
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseId)
+        collectionView.register(CardCell.self, forCellWithReuseIdentifier: reuseId)
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -64,9 +64,10 @@ extension CardsCell : UICollectionViewDataSource, UICollectionViewDelegate, UICo
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: reuseId, for: indexPath)
-        cell.contentView.backgroundColor = .blue
+        let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: reuseId, for: indexPath) as! CardCell
+        //cell.contentView.backgroundColor = .blue
         //cell.backgroundColor = .blue
+        cell.configure(card: Card(circuito: "VISA", coloreHex: ""))
         return cell
     }
     

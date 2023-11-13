@@ -68,7 +68,7 @@ extension ProfileView {
     
     func layout(){
         addSubview(contentView)
-        var trailingConstraint =  contentView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20)
+        let trailingConstraint =  contentView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20)
         trailingConstraint.priority = .defaultHigh
         NSLayoutConstraint.activate([
             

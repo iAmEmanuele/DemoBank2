@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CardView" customModule="DemoBank2" customModuleProvider="target">
+            <connections>
+                <outlet property="cardContainer" destination="qFO-sD-gRc" id="P89-AW-D35"/>
+                <outlet property="cardNameLabel" destination="OSR-8i-lux" id="Byw-3Q-qa9"/>
+                <outlet property="contentView" destination="iN0-l3-epB" id="C5M-0y-G4U"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" misplaced="YES" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="468" height="158"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qFO-sD-gRc">
+                    <rect key="frame" x="116" y="6" width="241" height="100"/>
+                    <color key="backgroundColor" systemColor="systemBrownColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="OSp-NE-IFu"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OSR-8i-lux">
+                    <rect key="frame" x="116" y="131" width="241" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="OSR-8i-lux" firstAttribute="trailing" secondItem="qFO-sD-gRc" secondAttribute="trailing" id="KPl-Io-18L"/>
+                <constraint firstItem="OSR-8i-lux" firstAttribute="top" secondItem="qFO-sD-gRc" secondAttribute="bottom" constant="25" id="VJJ-vm-cwa"/>
+                <constraint firstItem="qFO-sD-gRc" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="6" id="cja-5U-00o"/>
+                <constraint firstAttribute="trailing" secondItem="qFO-sD-gRc" secondAttribute="trailing" constant="116" id="hGI-Pq-bhC"/>
+                <constraint firstItem="qFO-sD-gRc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="116" id="nEf-Id-SUP"/>
+                <constraint firstItem="OSR-8i-lux" firstAttribute="leading" secondItem="qFO-sD-gRc" secondAttribute="leading" id="p4J-2v-S7W"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="64.122137404580144" y="-223.94366197183101"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBrownColor">
+            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
