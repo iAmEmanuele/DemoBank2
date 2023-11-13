@@ -1,0 +1,135 @@
+{
+  "infoPrincipali": {
+    "nome": "Mario",
+    "cognome": "Rossi",
+    "saldo": "350.45"
+  },
+  "carte": [
+    {
+      "circuito": "Visa",
+      "coloreHex": "#FF4500"
+    },
+    {
+      "circuito": "MasterCard",
+      "coloreHex": "#0F52BA"
+    },
+    {
+      "circuito": "PostePay",
+      "coloreHex": "#50C878"
+    },
+    {
+      "circuito": "MasterCard",
+      "coloreHex": "#9966CC"
+    },
+    {
+      "circuito": "Visa",
+      "coloreHex": "#FFC0CB"
+    },
+    {
+      "circuito": "Visa",
+      "coloreHex": "#D2691E"
+    }
+  ],
+  "listaMovimenti": [
+    {
+      "esercente": "GTT",
+      "descrizione": "Biglietto metro/bus",
+      "importo": "-1.5"
+    },
+    {
+      "esercente": "Bar Via Po",
+      "descrizione": "Caffè",
+      "importo": "-2.0"
+    },
+    {
+      "esercente": "Bonifico",
+      "descrizione": "Causale: regalo laurea Giorgia",
+      "importo": "40.0"
+    },
+    {
+      "esercente": "Padrone di casa",
+      "descrizione": "Causale: affitto gennaio",
+      "importo": "-500.0"
+    },
+    {
+      "esercente": "Reply",
+      "descrizione": "Stipendio mese gennaio",
+      "importo": "1345.07"
+    },
+    {
+      "esercente": "Padrone di casa",
+      "descrizione": "Causale: affitto dicembre",
+      "importo": "-500.0"
+    },
+    {
+      "esercente": "Reply",
+      "descrizione": "Stipendio mese dicembre",
+      "importo": "1345.07"
+    },
+    {
+      "esercente": "Apple store",
+      "descrizione": "Airpods Pro",
+      "importo": "-270.0"
+    },
+    {
+      "esercente": "Coop",
+      "descrizione": "Spesa",
+      "importo": "-140.0"
+    },
+    {
+      "esercente": "Apple store",
+      "descrizione": "Iphone 14 Pro",
+      "importo": "-2000.0"
+    },
+    {
+      "esercente": "Bonifico",
+      "descrizione": "Causale Viaggio di Dicembre",
+      "importo": "1500.0"
+    },
+    {
+      "esercente": "Reply",
+      "descrizione": "Stipendio mese novembre",
+      "importo": "1345.07"
+    },
+    {
+      "esercente": "Reply",
+      "descrizione": "Stipendio mese ottobre",
+      "importo": "1345.07"
+    },
+    {
+      "esercente": "Reply",
+      "descrizione": "Stipendio mese settembre",
+      "importo": "1345.07"
+    },
+    {
+      "esercente": "Carrefour",
+      "descrizione": "Spesa",
+      "importo": "-100.11"
+    },
+    {
+      "esercente": "Bonifico",
+      "descrizione": "Causale regalo laurea Riccardo",
+      "importo": "50.0"
+    },
+    {
+      "esercente": "Apple Store",
+      "descrizione": "Mac Studio m2 Ultra",
+      "importo": "4.899,00"
+    },
+    {
+      "esercente": "Bonifico",
+      "descrizione": "Causale regalo laurea Francesco",
+      "importo": "70.0"
+    },
+    {
+      "esercente": "Carrefour",
+      "descrizione": "Spesa",
+      "importo": "-100.11"
+    },
+    {
+      "esercente": "Carrefour",
+      "descrizione": "Spesa",
+      "importo": "-100.11"
+    }
+  ]
+}
