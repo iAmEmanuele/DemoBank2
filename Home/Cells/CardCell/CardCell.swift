@@ -29,10 +29,16 @@ class CardCell: UICollectionViewCell {
 
 extension CardCell {
     func style(){
-       
+        cardView.translatesAutoresizingMaskIntoConstraints = false
     }
     
     func layout()  {
         contentView.addSubview(cardView)
+        NSLayoutConstraint.activate([
+            cardView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            cardView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            cardView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            cardView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
+        ])
     }
 }

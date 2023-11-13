@@ -37,7 +37,7 @@ extension HomeViewController {
         
         // tableView
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.separatorStyle = .none
+       // tableView.separatorStyle = .none
         tableView.tableHeaderView?.frame = CGRect(origin: tableView.frame.origin, size: CGSize(width: UIScreen.main.bounds.width, height: 200))
         tableView.tableHeaderView = cardContainer
         tableView.dataSource = self

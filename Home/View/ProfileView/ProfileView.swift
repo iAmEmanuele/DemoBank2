@@ -38,9 +38,7 @@ class ProfileView : UIView {
     }
     
     func initialize(){
-        let bundle = Bundle(for: ProfileView.self)
-        bundle.loadNibNamed("ProfileView", owner: self, options: nil)
-        
+        loadfromNib()
         style()
         layout()
     }
@@ -62,12 +60,10 @@ extension ProfileView {
         
         //profileImage
         profileImage.layer.cornerRadius = profileImage.frame.size.width / 2
-        
         profileImage.clipsToBounds = true
     }
     
     func layout(){
-        addSubview(contentView)
         let trailingConstraint =  contentView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20)
         trailingConstraint.priority = .defaultHigh
         NSLayoutConstraint.activate([

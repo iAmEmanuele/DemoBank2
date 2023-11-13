@@ -16,39 +16,29 @@ class CardView : UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        initialize()
+        loadfromNib()
         
         
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        initialize()
+        loadfromNib()
     }
     
     func configure(card : Card){
+        style()
         cardNameLabel.text = card.circuito
         //cardContainer.backgroundColor = UIColor()
     }
     
-    func initialize(){
-        let bundle = Bundle(for: CardView.self)
-        bundle.loadNibNamed("CardView", owner: self, options: nil)
-        
-        style()
-        layout()
-        
-    }
 }
 
 extension CardView {
     func style(){
-        cardContainer.layer.cornerRadius = 8
+        cardContainer.setCornerRadius(8)
     }
     
-    func layout(){
-        addSubview(contentView)
-    }
 }
 
 
