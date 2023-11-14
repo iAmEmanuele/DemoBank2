@@ -11,7 +11,7 @@ class HomeViewController: UIViewController {
     
     let cardContainer = ProfileView(frame: .zero)
     let cardsReuseID = "customCell"
-    let movementsReuseID = "movementsCell"
+    let movementReuseID = "movementsCell"
     let tableView = UITableView()
     
     var userInfo : UserInfo?
@@ -28,7 +28,7 @@ class HomeViewController: UIViewController {
             cardContainer.configure(mainIfo: MainInfo(nome: "unknown", cognome: "unknown", saldo: "non disponibile"))
         }
         tableView.register(CardsCell.self, forCellReuseIdentifier: cardsReuseID)
-        tableView.register(MovementsCell.self, forCellReuseIdentifier: movementsReuseID)
+        tableView.register(UINib(nibName: "MovementCellTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: movementReuseID)
         
     }
     
@@ -69,7 +69,7 @@ extension HomeViewController {
 
 extension HomeViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        2
+        (userInfo?.listaMovimenti.count ?? 0) + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -80,9 +80,9 @@ extension HomeViewController : UITableViewDataSource {
             }
             return cell
         }else{
-            let cell = tableView.dequeueReusableCell(withIdentifier: movementsReuseID, for: indexPath) as! MovementsCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: movementReuseID, for: indexPath) as! MovementCellTableViewCell
             if let movements = userInfo?.listaMovimenti{
-                cell.configure(temp: movements)
+                cell.configure(movement: movements[indexPath.row-1])
             }
             return cell
             
