@@ -12,6 +12,7 @@ class CardsCell : UITableViewCell  {
    
     let label = UILabel()
     let reuseId = "customCollectionCell"
+    var cards : [Card] = []
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -24,6 +25,10 @@ class CardsCell : UITableViewCell  {
         super.init(coder: aDecoder)
         initialize()
         layout()
+    }
+    
+    func configure(temp : [Card]){
+       cards = temp
     }
     
 
@@ -43,13 +48,11 @@ extension CardsCell {
         contentView.addSubview(collectionView)
     }
     
-    func configure(text : String){
-        label.text = text
-    }
+  
     
     func layout(){
         NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            collectionView.topAnchor.constraint(equalTo: contentView.topAnchor,constant: 20),
             collectionView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             collectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,constant: 20),
             collectionView.heightAnchor.constraint(equalToConstant: 70)
@@ -60,14 +63,12 @@ extension CardsCell {
 
 extension CardsCell : UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        10
+        cards.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: reuseId, for: indexPath) as! CardCell
-        //cell.contentView.backgroundColor = .blue
-        //cell.backgroundColor = .blue
-        cell.configure(card: Card(circuito: "VISA", coloreHex: ""))
+        cell.configure(card: cards[indexPath.row])
         return cell
     }
     

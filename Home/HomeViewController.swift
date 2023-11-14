@@ -11,15 +11,19 @@ class HomeViewController: UIViewController {
     
     let cardContainer = ProfileView(frame: .zero)
     let reuseID = "customCell"
-    
     let tableView = UITableView()
+    
+    var userInfo : UserInfo?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        userInfo = ApiManager.userInfo
         style()
         layout()
-        cardContainer.configure(mainIfo: MainInfo(nome: "Pippo", cognome: "", saldo: "350.12 €"))
+        if let mainInfo = userInfo?.infoPrincipali{
+            cardContainer.configure(mainIfo: mainInfo)
+        }
         tableView.register(CardsCell.self, forCellReuseIdentifier: reuseID)
         
     }
@@ -37,7 +41,7 @@ extension HomeViewController {
         
         // tableView
         tableView.translatesAutoresizingMaskIntoConstraints = false
-       // tableView.separatorStyle = .none
+        tableView.separatorStyle = .none
         tableView.tableHeaderView?.frame = CGRect(origin: tableView.frame.origin, size: CGSize(width: UIScreen.main.bounds.width, height: 200))
         tableView.tableHeaderView = cardContainer
         tableView.dataSource = self
@@ -66,8 +70,10 @@ extension HomeViewController : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseID, for: indexPath) as! CardsCell
-        //cell.textLabel?.text = "\(indexPath.row)"
-        cell.configure(text: "TEST")
+        
+        if let cards = userInfo?.carte{
+            cell.configure(temp: cards)
+        }
         return cell
     }
     

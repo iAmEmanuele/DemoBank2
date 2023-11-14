@@ -29,7 +29,7 @@ class CardView : UIView {
     func configure(card : Card){
         style()
         cardNameLabel.text = card.circuito
-        //cardContainer.backgroundColor = UIColor()
+        cardContainer.backgroundColor = UIColor(hex: card.coloreHex)
     }
     
 }
