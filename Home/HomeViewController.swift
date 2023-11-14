@@ -23,6 +23,8 @@ class HomeViewController: UIViewController {
         layout()
         if let mainInfo = userInfo?.infoPrincipali{
             cardContainer.configure(mainIfo: mainInfo)
+        }else{
+            cardContainer.configure(mainIfo: MainInfo(nome: "unknown", cognome: "unknown", saldo: "non disponibile"))
         }
         tableView.register(CardsCell.self, forCellReuseIdentifier: reuseID)
         

@@ -9,7 +9,7 @@ import UIKit
 
 class CardsCell : UITableViewCell  {
     var collectionView =  UICollectionView(frame: .zero,collectionViewLayout: UICollectionViewLayout())
-   
+    
     let label = UILabel()
     let reuseId = "customCollectionCell"
     var cards : [Card] = []
@@ -28,10 +28,10 @@ class CardsCell : UITableViewCell  {
     }
     
     func configure(temp : [Card]){
-       cards = temp
+        cards = temp
     }
     
-
+    
 }
 
 
@@ -45,18 +45,25 @@ extension CardsCell {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        contentView.addSubview(collectionView)
+        label.translatesAutoresizingMaskIntoConstraints = false
+            contentView.addSubview(collectionView)
+        
+       
     }
     
-  
+    
     
     func layout(){
+        // collectionView
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: contentView.topAnchor,constant: 20),
             collectionView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             collectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,constant: 20),
             collectionView.heightAnchor.constraint(equalToConstant: 70)
         ])
+        
+       
+        
     }
 }
 
@@ -65,7 +72,7 @@ extension CardsCell : UICollectionViewDataSource, UICollectionViewDelegate, UICo
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         cards.count
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: reuseId, for: indexPath) as! CardCell
         cell.configure(card: cards[indexPath.row])
@@ -76,7 +83,7 @@ extension CardsCell : UICollectionViewDataSource, UICollectionViewDelegate, UICo
         UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 0)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-         20
+        20
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         CGSize(width: 100, height: 70)
