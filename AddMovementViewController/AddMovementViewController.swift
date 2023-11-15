@@ -11,10 +11,11 @@ class AddMovementViewController: UIViewController {
 
     @IBOutlet var navigationItemCustom: UINavigationItem!
     
+    @IBOutlet var confirmButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItemCustom.title = "Aggiungi Movimenti"
-        
+        style()
     }
 
 
@@ -22,4 +23,24 @@ class AddMovementViewController: UIViewController {
         self.dismiss(animated: true)
     }
 
+    @IBAction func confirmAction(_ sender: UIButton) {
+        self.dismiss(animated: true)
+    }
+}
+
+extension AddMovementViewController {
+    func style(){
+        // titleLabel
+        let label = UILabel()
+        label.numberOfLines = 2
+        label.textAlignment = .center
+        label.text = "Aggiungi\nmovimento"
+        navigationItemCustom.titleView = label
+        
+        // confirmButton
+        confirmButton.setTitle("Conferma", for: .normal)
+        confirmButton.layer.cornerRadius = 50
+    
+       
+    }
 }
