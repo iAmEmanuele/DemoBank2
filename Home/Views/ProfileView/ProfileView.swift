@@ -52,13 +52,14 @@ extension ProfileView {
         
         // contentView
         contentView.translatesAutoresizingMaskIntoConstraints = false
-        contentView.layer.cornerRadius = 8
+        contentView.layer.masksToBounds = false
         contentView.layer.shadowColor = UIColor.black.cgColor
-        contentView.layer.shadowOpacity = 0.5
-        contentView.layer.shadowRadius = 8
-        contentView.layer.shouldRasterize = true
-        contentView.layer.rasterizationScale = UIScreen.main.scale
-        
+        contentView.layer.shadowOpacity = 0.2
+        contentView.layer.shadowRadius = 5
+        contentView.layer.shadowOffset = CGSize(width: 0, height: 0)
+//        contentView.layer.shouldRasterize = true
+//        contentView.layer.rasterizationScale = UIScreen.main.scale
+        self.setCornerRadius(20)
         //profileImage
         profileImage.layer.cornerRadius = profileImage.frame.size.width / 2
         profileImage.clipsToBounds = true

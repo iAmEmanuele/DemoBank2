@@ -49,7 +49,6 @@ extension HomeViewController {
         tableView.tableHeaderView?.frame = CGRect(origin: tableView.frame.origin, size: CGSize(width: UIScreen.main.bounds.width, height: 200))
         tableView.tableHeaderView = cardContainer
         tableView.dataSource = self
-        tableView.rowHeight = 100
         
     }
     
@@ -69,7 +68,17 @@ extension HomeViewController {
 
 extension HomeViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        (userInfo?.listaMovimenti.count ?? 0) + 1
+        guard let movements = userInfo?.listaMovimenti else {
+            return 1
+        }
+        
+        if movements.count <= 15 {
+            return movements.count + 1
+        } else{
+            return 15 + 1
+        }
+       
+           
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -94,10 +103,7 @@ extension HomeViewController : UITableViewDataSource {
     
 }
 
-//
-//extension HomeViewController : UITableViewDelegate {
-//    table
-//}
+
 
 
 

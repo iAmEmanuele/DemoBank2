@@ -22,7 +22,7 @@ extension UIView {
     }
     func setCornerRadius(_ radius : CGFloat = 5){
         self.layer.cornerRadius = radius
-        clipsToBounds = true
+       
     }
 }
 

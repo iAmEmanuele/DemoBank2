@@ -59,7 +59,8 @@ extension CardsCell {
             collectionView.topAnchor.constraint(equalTo: contentView.topAnchor,constant: 20),
             collectionView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             collectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,constant: 20),
-            collectionView.heightAnchor.constraint(equalToConstant: 70)
+            collectionView.heightAnchor.constraint(equalToConstant: 70),
+            collectionView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor,constant: -20)
         ])
         
        

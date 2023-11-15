@@ -16,10 +16,11 @@ class MovementCellTableViewCell: UITableViewCell {
     
     
     func configure(movement : Movement){
+        self.selectionStyle = .none
         esercenteLabel.text = movement.esercente
         descriptionLabel.text = movement.descrizione
         let amount = movement.importo.formatDoubleToString(maximunFractionDigits: "%.2f")
-        amountLabel.text = "\(amount)€"//\(movement.importo)
+        amountLabel.text = "\(amount)€"
         if(movement.importo < 0){
             amountLabel.textColor = .red
         }else{

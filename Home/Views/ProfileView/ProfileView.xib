@@ -10,9 +10,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileView" customModule="DemoBank2" customModuleProvider="target">
             <connections>
-                <outlet property="balanceLabel" destination="D2W-g1-Uzl" id="3oX-C1-dNO"/>
+                <outlet property="balanceLabel" destination="qxw-Tf-iWO" id="oB4-fh-fae"/>
                 <outlet property="contentView" destination="iN0-l3-epB" id="xbl-pO-afy"/>
-                <outlet property="nameLabel" destination="qxw-Tf-iWO" id="yBC-pk-Qa0"/>
+                <outlet property="nameLabel" destination="D2W-g1-Uzl" id="jdv-az-gfa"/>
                 <outlet property="profileImage" destination="p1h-Ks-VDO" id="h3G-2z-Ut3"/>
             </connections>
         </placeholder>
@@ -24,15 +24,15 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WkJ-an-gS4">
                     <rect key="frame" x="0.0" y="0.0" width="360" height="200"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qxw-Tf-iWO">
-                            <rect key="frame" x="162" y="124" width="46" height="21"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saldo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qxw-Tf-iWO">
+                            <rect key="frame" x="162" y="96" width="45" height="21"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saldo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D2W-g1-Uzl">
-                            <rect key="frame" x="162" y="62" width="43" height="21"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D2W-g1-Uzl">
+                            <rect key="frame" x="162" y="62" width="55.666666666666657" height="24"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -46,7 +46,7 @@
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstItem="qxw-Tf-iWO" firstAttribute="top" secondItem="D2W-g1-Uzl" secondAttribute="bottom" constant="41" id="4Iv-jX-Tfd"/>
+                        <constraint firstItem="qxw-Tf-iWO" firstAttribute="top" secondItem="D2W-g1-Uzl" secondAttribute="bottom" constant="10" id="4Iv-jX-Tfd"/>
                         <constraint firstItem="D2W-g1-Uzl" firstAttribute="top" secondItem="p1h-Ks-VDO" secondAttribute="top" constant="12.000000000000007" id="Kbq-aj-oei"/>
                         <constraint firstItem="qxw-Tf-iWO" firstAttribute="leading" secondItem="D2W-g1-Uzl" secondAttribute="leading" id="MdX-LA-g1z"/>
                         <constraint firstItem="D2W-g1-Uzl" firstAttribute="leading" secondItem="p1h-Ks-VDO" secondAttribute="trailing" constant="30" id="V3q-QP-ztX"/>
