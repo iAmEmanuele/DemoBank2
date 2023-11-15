@@ -18,20 +18,20 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Urp-rI-ghE">
-                        <rect key="frame" x="16.000000000000004" y="10" width="35.333333333333343" height="17"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <rect key="frame" x="15.999999999999996" y="10" width="37.666666666666657" height="17"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GOJ-R6-8j6">
                         <rect key="frame" x="16" y="76.666666666666671" width="31" height="14.333333333333329"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dq0-XS-UsT">
-                        <rect key="frame" x="345.66666666666669" y="42" width="35.333333333333314" height="17"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <rect key="frame" x="343.33333333333331" y="42" width="37.666666666666686" height="17"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -39,7 +39,7 @@
                 <constraints>
                     <constraint firstItem="dq0-XS-UsT" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Urp-rI-ghE" secondAttribute="trailing" constant="10" id="5Av-v7-Nj5"/>
                     <constraint firstAttribute="trailing" secondItem="dq0-XS-UsT" secondAttribute="trailing" constant="16" id="7U3-Ik-EM6"/>
-                    <constraint firstItem="GOJ-R6-8j6" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Urp-rI-ghE" secondAttribute="bottom" constant="5" id="EU5-Vy-ZeU"/>
+                    <constraint firstItem="GOJ-R6-8j6" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Urp-rI-ghE" secondAttribute="bottom" constant="10" id="EU5-Vy-ZeU"/>
                     <constraint firstAttribute="bottom" secondItem="GOJ-R6-8j6" secondAttribute="bottom" constant="10" id="HrE-BL-ynr"/>
                     <constraint firstItem="dq0-XS-UsT" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="X2F-tt-csN"/>
                     <constraint firstItem="GOJ-R6-8j6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="bn6-zU-yuS"/>
@@ -53,7 +53,7 @@
                 <outlet property="descriptionLabel" destination="GOJ-R6-8j6" id="zEn-OG-aea"/>
                 <outlet property="esercenteLabel" destination="Urp-rI-ghE" id="TgI-gA-aOw"/>
             </connections>
-            <point key="canvasLocation" x="144.27480916030532" y="39.08450704225352"/>
+            <point key="canvasLocation" x="142.74809160305344" y="38.380281690140848"/>
         </tableViewCell>
     </objects>
 </document>

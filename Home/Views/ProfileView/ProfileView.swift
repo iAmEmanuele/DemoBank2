@@ -33,7 +33,8 @@ class ProfileView : UIView {
     
     func configure(mainIfo: MainInfo) {
         nameLabel.text = "\(mainIfo.nome) \(mainIfo.cognome)"
-        balanceLabel.text = "Saldo: \(mainIfo.saldo)"
+        let balance = mainIfo.saldo.formatDoubleToString(maximunFractionDigits: "%.2f")
+        balanceLabel.text = "Saldo: \(balance) €"
         profileImage.image = UIImage(named: "ProfileImage")
     }
     

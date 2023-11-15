@@ -10,5 +10,5 @@ import Foundation
 struct MainInfo : Codable {
     let nome : String
     let cognome : String
-    let saldo : String
+    let saldo : Double
 }

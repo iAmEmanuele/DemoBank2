@@ -10,5 +10,5 @@ import Foundation
 struct Movement : Codable {
     let esercente : String
     let descrizione : String
-    let importo : String
+    let importo : Double
 }

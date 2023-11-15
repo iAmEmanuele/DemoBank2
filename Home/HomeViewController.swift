@@ -25,7 +25,7 @@ class HomeViewController: UIViewController {
         if let mainInfo = userInfo?.infoPrincipali{
             cardContainer.configure(mainIfo: mainInfo)
         }else{
-            cardContainer.configure(mainIfo: MainInfo(nome: "unknown", cognome: "unknown", saldo: "non disponibile"))
+            cardContainer.configure(mainIfo: MainInfo(nome: "unknown", cognome: "unknown", saldo: 0))
         }
         tableView.register(CardsCell.self, forCellReuseIdentifier: cardsReuseID)
         tableView.register(UINib(nibName: "MovementCellTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: movementReuseID)

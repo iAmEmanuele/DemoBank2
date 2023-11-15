@@ -58,3 +58,10 @@ extension UIColor {
         return nil
     }
 }
+
+
+extension Double {
+    func formatDoubleToString(maximunFractionDigits : String) -> String{
+        return String(format: maximunFractionDigits, self)
+    }
+}

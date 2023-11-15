@@ -18,7 +18,12 @@ class MovementCellTableViewCell: UITableViewCell {
     func configure(movement : Movement){
         esercenteLabel.text = movement.esercente
         descriptionLabel.text = movement.descrizione
-        amountLabel.text = movement.importo
-        // MARK colore amount
+        let amount = movement.importo.formatDoubleToString(maximunFractionDigits: "%.2f")
+        amountLabel.text = "\(amount)€"//\(movement.importo)
+        if(movement.importo < 0){
+            amountLabel.textColor = .red
+        }else{
+            amountLabel.textColor = .green
+        }
     }
 }
