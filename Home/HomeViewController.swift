@@ -19,6 +19,9 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(goToAddMovement))
+        self.navigationController?.navigationBar.barTintColor = .brown
+        self.navigationItem.title = "Home"
         userInfo = ApiManager.userInfo
         style()
         layout()
@@ -32,7 +35,9 @@ class HomeViewController: UIViewController {
         
     }
     
-    
+    @objc func goToAddMovement(){
+        self.present(AddMovementViewController(), animated: true)
+    }
 }
 
 extension HomeViewController {
@@ -55,7 +60,7 @@ extension HomeViewController {
     func layout() {
         view.addSubview(tableView)
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,constant: 10),
+            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             view.trailingAnchor.constraint(equalTo: tableView.trailingAnchor)
