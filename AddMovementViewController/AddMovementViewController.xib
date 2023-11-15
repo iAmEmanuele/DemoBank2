@@ -121,7 +121,7 @@
                 <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3mO-Ah-QuD">
                     <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                     <items>
-                        <navigationItem title="Aggiungi movimenti" id="OtS-6U-cMH">
+                        <navigationItem id="OtS-6U-cMH">
                             <barButtonItem key="leftBarButtonItem" systemItem="trash" id="VRp-mG-mbC">
                                 <connections>
                                     <action selector="deleteAction:" destination="-1" id="8tS-sy-hnT"/>
