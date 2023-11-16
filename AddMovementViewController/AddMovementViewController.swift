@@ -66,7 +66,7 @@ extension AddMovementViewController {
     }
     
     func disableConfirmButton(textField: UITextField) {
-        guard let currentText = textField.text  else {
+        guard textField.text != nil  else {
             return confirmButton.isEnabled = false
         }
         if !amountTextField.text!.isEmpty && !nametextField.text!.isEmpty {
