@@ -35,7 +35,6 @@ class AddMovementViewController: UIViewController {
             delegate?.addMovement(movement: movement)
             self.dismiss(animated: true)
         }
-       
     }
 }
 
@@ -52,6 +51,17 @@ extension AddMovementViewController {
         confirmButton.setTitle("Conferma", for: .normal)
         confirmButton.layer.cornerRadius = 50
         
+        // amountTextField
+        amountTextField.delegate = self
+        // nameTextField
+        nametextField.delegate = self
         
+        
+    }
+}
+
+extension AddMovementViewController : UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
     }
 }
