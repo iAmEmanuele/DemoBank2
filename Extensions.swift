@@ -65,3 +65,13 @@ extension Double {
         return String(format: maximunFractionDigits, self)
     }
 }
+
+
+extension UIViewController {
+    func showAlertDialog(title : String,message:String){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .cancel))
+        self.present(alert,animated: true)
+        
+    }
+}

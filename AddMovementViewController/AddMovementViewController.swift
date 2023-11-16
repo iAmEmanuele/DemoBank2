@@ -30,7 +30,10 @@ class AddMovementViewController: UIViewController {
     }
     
     @IBAction func confirmAction(_ sender: UIButton) {
-        if let name = nametextField.text , let amountString = amountTextField.text, let amount = Double(amountString) {
+        guard let amountString = amountTextField.text, let amount = Double(amountString) else {
+            return showAlertDialog(title: "DemoBank2", message: "L'importo inserito non è valido ")
+        }
+        if let name = nametextField.text {
             let movement = Movement(esercente: name, descrizione: "", importo: amount)
             delegate?.addMovement(movement: movement)
             self.dismiss(animated: true)
@@ -40,6 +43,7 @@ class AddMovementViewController: UIViewController {
 
 extension AddMovementViewController {
     func style(){
+        
         // titleLabel
         let label = UILabel()
         label.numberOfLines = 2
@@ -50,18 +54,41 @@ extension AddMovementViewController {
         // confirmButton
         confirmButton.setTitle("Conferma", for: .normal)
         confirmButton.layer.cornerRadius = 50
+        confirmButton.isEnabled = false
         
         // amountTextField
         amountTextField.delegate = self
+        
         // nameTextField
         nametextField.delegate = self
         
+        
+    }
+    
+    func disableConfirmButton(textField: UITextField) {
+        guard let currentText = textField.text  else {
+            return confirmButton.isEnabled = false
+        }
+        if !amountTextField.text!.isEmpty && !nametextField.text!.isEmpty {
+            return confirmButton.isEnabled = true
+        }else{
+            return confirmButton.isEnabled = false
+        }
         
     }
 }
 
 extension AddMovementViewController : UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
+        disableConfirmButton(textField: textField)
+        return textField.resignFirstResponder()
+        
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        disableConfirmButton(textField: textField)
+    }
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        disableConfirmButton(textField: textField)
     }
 }
