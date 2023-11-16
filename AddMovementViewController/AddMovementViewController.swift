@@ -53,7 +53,23 @@ extension AddMovementViewController {
         
         // confirmButton
         confirmButton.setTitle("Conferma", for: .normal)
-        confirmButton.layer.cornerRadius = 50
+        if #available(iOS 15.0, *) {
+            confirmButton.configuration?.background.cornerRadius = 30
+            confirmButton.configuration?.contentInsets = NSDirectionalEdgeInsets(
+                top: 10,
+                leading: 40,
+                bottom: 10,
+                trailing: 40
+            )
+        } else {
+            confirmButton.setCornerRadius(30)
+            confirmButton.contentEdgeInsets = UIEdgeInsets(
+                top: 10,
+                left: 40,
+                bottom: 10,
+                right: 40
+            )
+        }
         confirmButton.isEnabled = false
         
         // amountTextField

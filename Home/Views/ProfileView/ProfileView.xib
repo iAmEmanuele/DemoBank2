@@ -11,7 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileView" customModule="DemoBank2" customModuleProvider="target">
             <connections>
                 <outlet property="balanceLabel" destination="qxw-Tf-iWO" id="oB4-fh-fae"/>
-                <outlet property="contentView" destination="iN0-l3-epB" id="xbl-pO-afy"/>
+                <outlet property="contentView" destination="WkJ-an-gS4" id="Cr9-MH-YEC"/>
                 <outlet property="nameLabel" destination="D2W-g1-Uzl" id="jdv-az-gfa"/>
                 <outlet property="profileImage" destination="p1h-Ks-VDO" id="h3G-2z-Ut3"/>
             </connections>
@@ -22,7 +22,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WkJ-an-gS4">
-                    <rect key="frame" x="0.0" y="0.0" width="360" height="200"/>
+                    <rect key="frame" x="20" y="20" width="320" height="200"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saldo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qxw-Tf-iWO">
                             <rect key="frame" x="162" y="96" width="45" height="21"/>
@@ -58,10 +58,10 @@
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="WkJ-an-gS4" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Afa-Wb-E5L"/>
-                <constraint firstAttribute="trailing" secondItem="WkJ-an-gS4" secondAttribute="trailing" id="QyG-hy-dyj"/>
+                <constraint firstItem="WkJ-an-gS4" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="Afa-Wb-E5L"/>
+                <constraint firstAttribute="trailing" secondItem="WkJ-an-gS4" secondAttribute="trailing" constant="20" id="QyG-hy-dyj"/>
                 <constraint firstAttribute="bottom" secondItem="WkJ-an-gS4" secondAttribute="bottom" priority="999" id="Uzq-3m-Xkx"/>
-                <constraint firstItem="WkJ-an-gS4" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="naU-Ng-980"/>
+                <constraint firstItem="WkJ-an-gS4" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="naU-Ng-980"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="29.007633587786259" y="-247.88732394366198"/>

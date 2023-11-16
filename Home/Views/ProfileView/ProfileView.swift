@@ -31,6 +31,11 @@ class ProfileView : UIView {
         initialize()
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        addShadow()
+    }
+    
     func configure(mainIfo: MainInfo) {
         nameLabel.text = "\(mainIfo.nome) \(mainIfo.cognome)"
         let balance = mainIfo.saldo.formatDoubleToString(maximunFractionDigits: "%.2f")
@@ -41,32 +46,33 @@ class ProfileView : UIView {
     func initialize(){
         loadfromNib()
         style()
-        layout()
     }
     
     
 }
 
 extension ProfileView {
+    func addShadow(){
+        contentView.layer.cornerRadius = 20.0
+        contentView.layer.shadowColor = UIColor.gray.cgColor
+        contentView.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
+        contentView.layer.shadowRadius = 12.0
+        contentView.layer.shadowOpacity = 0.7
+        
+    }
     func style() {
         
         // contentView
         contentView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.clipsToBounds = true
         contentView.layer.masksToBounds = false
-        contentView.layer.shadowColor = UIColor.black.cgColor
-        contentView.layer.shadowOpacity = 0.2
-        contentView.layer.shadowRadius = 5
-        contentView.layer.shadowOffset = CGSize(width: 0, height: 0)
-//        contentView.layer.shouldRasterize = true
-//        contentView.layer.rasterizationScale = UIScreen.main.scale
-        self.setCornerRadius(20)
         //profileImage
         profileImage.layer.cornerRadius = profileImage.frame.size.width / 2
         profileImage.clipsToBounds = true
     }
     
     func layout(){
-        let trailingConstraint =  contentView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20)
+        let trailingConstraint =  contentView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 20)
         trailingConstraint.priority = .defaultHigh
         NSLayoutConstraint.activate([
             
