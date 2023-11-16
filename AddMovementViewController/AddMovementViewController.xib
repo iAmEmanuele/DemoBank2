@@ -11,7 +11,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddMovementViewController" customModule="DemoBank2" customModuleProvider="target">
             <connections>
+                <outlet property="amountTextField" destination="1wc-k2-fug" id="WIG-75-IGy"/>
                 <outlet property="confirmButton" destination="7S9-9a-ksY" id="DKq-JD-mcQ"/>
+                <outlet property="nametextField" destination="Y4d-gm-L1B" id="gDh-9D-GhW"/>
                 <outlet property="navigationItemCustom" destination="OtS-6U-cMH" id="6y9-UK-gtJ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -42,7 +44,7 @@
                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="qnL-MB-hjf"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                 </textField>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="€" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aym-hg-aXS">
                                     <rect key="frame" x="292.66666666666669" y="20" width="10.333333333333314" height="20.333333333333329"/>

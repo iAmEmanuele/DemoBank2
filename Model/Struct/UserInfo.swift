@@ -10,5 +10,5 @@ import Foundation
 struct UserInfo : Codable {
     let infoPrincipali : MainInfo
     let carte : [Card]
-    let listaMovimenti : [Movement]
+    var listaMovimenti : [Movement]
 }

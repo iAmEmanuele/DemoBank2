@@ -7,26 +7,25 @@
 
 import UIKit
 
+
+
 class HomeViewController: UIViewController {
     
-    let cardContainer = ProfileView(frame: .zero)
-    let cardsReuseID = "customCell"
-    let movementReuseID = "movementsCell"
-    let tableView = UITableView()
+    private let cardContainer = ProfileView(frame: .zero)
+    private let cardsReuseID = "customCell"
+    private let movementReuseID = "movementsCell"
+    private let tableView = UITableView()
+    private var homePresenter : HomePresenter =  HomePresenter()
     
-    var userInfo : UserInfo?
-    
-    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(goToAddMovement))
-        self.navigationController?.navigationBar.barTintColor = .brown
-        self.navigationItem.title = "Home"
-        userInfo = ApiManager.userInfo
+        homePresenter.homeViewController = self
         style()
         layout()
-        if let mainInfo = userInfo?.infoPrincipali{
-            cardContainer.configure(mainIfo: mainInfo)
+        if let userInfo = homePresenter.userInfo{
+            cardContainer.configure(mainIfo: userInfo.infoPrincipali)
+            
         }else{
             cardContainer.configure(mainIfo: MainInfo(nome: "unknown", cognome: "unknown", saldo: 0))
         }
@@ -35,14 +34,21 @@ class HomeViewController: UIViewController {
         
     }
     
+    func updateTableView(){
+        tableView.reloadData()
+    }
+    
     @objc func goToAddMovement(){
-        self.present(AddMovementViewController(), animated: true)
+        homePresenter.openAddMovementViewController(from: self)
     }
 }
 
 extension HomeViewController {
     func style() {
-        
+        // navigationItem
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(goToAddMovement))
+        self.navigationController?.navigationBar.barTintColor = .brown
+        self.navigationItem.title = "Home"
         // cardContainer
         var size = cardContainer.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
         size.width = UIScreen.main.bounds.width
@@ -73,7 +79,7 @@ extension HomeViewController {
 
 extension HomeViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let movements = userInfo?.listaMovimenti else {
+        guard let movements = homePresenter.userInfo?.listaMovimenti else {
             return 1
         }
         
@@ -89,13 +95,13 @@ extension HomeViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if(indexPath.row == 0){
             let cell = tableView.dequeueReusableCell(withIdentifier: cardsReuseID, for: indexPath) as! CardsCell
-            if let cards = userInfo?.carte{
+            if let cards = homePresenter.userInfo?.carte{
                 cell.configure(temp: cards)
             }
             return cell
         }else{
             let cell = tableView.dequeueReusableCell(withIdentifier: movementReuseID, for: indexPath) as! MovementCellTableViewCell
-            if let movements = userInfo?.listaMovimenti{
+            if let movements = homePresenter.userInfo?.listaMovimenti{
                 cell.configure(movement: movements[indexPath.row-1])
             }
             return cell
@@ -107,6 +113,7 @@ extension HomeViewController : UITableViewDataSource {
     
     
 }
+
 
 
 
