@@ -7,8 +7,6 @@
 
 import UIKit
 
-
-
 class HomeViewController: UIViewController {
     
     private let cardContainer = ProfileView(frame: .zero)
@@ -17,7 +15,7 @@ class HomeViewController: UIViewController {
     private let tableView = UITableView()
     private var homePresenter : HomePresenter =  HomePresenter()
     
-   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         homePresenter.homeViewController = self
@@ -88,8 +86,8 @@ extension HomeViewController : UITableViewDataSource {
         } else{
             return 15 + 1
         }
-       
-           
+        
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -107,15 +105,6 @@ extension HomeViewController : UITableViewDataSource {
             return cell
             
         }
-       
+        
     }
-    
-    
-    
 }
-
-
-
-
-
-
