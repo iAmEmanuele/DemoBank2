@@ -8,8 +8,8 @@
 import Foundation
 
 class ApiManager {
-    static var userInfo : UserInfo?{
-        guard let path = Bundle.main.path(forResource: "userInfo", ofType: "json"),
+    static func userInfo (from nameOfJson : String) -> UserInfo? {
+        guard let path = Bundle.main.path(forResource: nameOfJson, ofType: "json"),
               let data = try? Data(contentsOf: URL(fileURLWithPath: path)), let userInfo = try? JSONDecoder().decode(UserInfo.self, from: data)
                 
         else{

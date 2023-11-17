@@ -17,8 +17,6 @@ class CardView : UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         loadfromNib()
-        
-        
     }
     
     required init?(coder aDecoder: NSCoder) {

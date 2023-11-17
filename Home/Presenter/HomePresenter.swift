@@ -15,7 +15,7 @@ class HomePresenter: AddMovementViewControllerDelegate  {
     weak var homeViewController : HomeViewController?
     
     init() {
-        self.userInfo = ApiManager.userInfo
+        self.userInfo = ApiManager.userInfo(from: "userInfo")
     }
     
     func openAddMovementViewController(from viewController : UIViewController ){
